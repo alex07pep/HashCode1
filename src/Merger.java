@@ -17,4 +17,18 @@ public class Merger
         }
         return newList;
     }
+//
+//            public static ArrayList<Photo> mergeVertical2(ArrayList<Photo> vertical) {
+//
+//                int n = vertical.size():
+//                ArrayList<Photo> newList = new ArrayList<Photo>();
+//                ArrayList<Photo> copyList = new ArrayList<Photo>(vertical);
+//
+//                Photo p = new
+//                int na = copyList.size();
+//                for(int i = 0;i<na;i++){
+//
+//                }
+//                return null;
+//            }
 }

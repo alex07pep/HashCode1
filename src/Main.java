@@ -43,12 +43,12 @@ public class Main {
             n = finalSlides.size();
             System.out.println(n);
             for (int i = 0; i < n; i++) {
-                int micut = MinClass.Min(photo, finalSlides.get(i));
+                int micut = MinClass.Min2(photo, finalSlides.get(i));
                 if (micut > max) {
                     max = micut;
                     index = i;
                 }
-                if(i>100)
+                if(i>2000)
                     break;
             }
             photo=finalSlides.get(index);
@@ -59,7 +59,7 @@ public class Main {
 
 
 
-        FileWriter fileWriter = new FileWriter("resources/1out_b_lovely_landscapes.txt.txt");
+        FileWriter fileWriter = new FileWriter("resources/4out_b");
         PrintWriter printWriter = new PrintWriter(fileWriter);
         printWriter.println(forPrintSlides.size()+"");
         for(Photo p : forPrintSlides){

@@ -26,5 +26,20 @@ public class MinClass {
 
     }
 
+    public static int Min2(Photo photo1, Photo photo2)
+    {
+
+       HashSet<String> combine = new HashSet<String>(photo1.tags);
+
+
+        combine.retainAll(photo2.tags);
+        int l1=photo1.tags.size();
+        int l2 = photo2.tags.size();
+        int c=combine.size();
+
+        return Math.min(l1-c,Math.min(l2-c,c));
+
+    }
+
 
 }
