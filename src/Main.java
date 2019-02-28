@@ -1,7 +1,4 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -11,13 +8,32 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-       ArrayList<Photo> list1 = Reader.read("resources/a_example.txt");
+       ArrayList<Photo> list1 = Reader.read("resources/e_shiny_selfies.txt");
 
-       System.out.println(list1);
+       ArrayList<Photo> verticalPhotos = new ArrayList<Photo>();
+       ArrayList<Photo> horizontalPhotos = new ArrayList<Photo>();
 
-       System.out.println(MinClass.Min(list1.get(0),list1.get(1)));
+        for (Photo item : list1) {
+            if(item.type.equals("V")){
+                verticalPhotos.add(item);
+            }else{
+                horizontalPhotos.add(item);
+            }
+        }
+        ArrayList<Photo> verticalSlides = Merger.mergeVertical(verticalPhotos);
 
-        System.out.println(MinClass.Min(list1.get(1),list1.get(2)));
-        System.out.println(MinClass.Min(list1.get(0),list1.get(3)));
+        ArrayList<Photo> finalSlides = new ArrayList<Photo>();
+        finalSlides.addAll(horizontalPhotos);
+        finalSlides.addAll(verticalSlides);
+
+        FileWriter fileWriter = new FileWriter("resources/out_e_shiny_selfies.txt");
+        PrintWriter printWriter = new PrintWriter(fileWriter);
+        printWriter.println(finalSlides.size()+"");
+        for(Photo p : finalSlides){
+            printWriter.println(p.id);
+        }
+        printWriter.close();
+        System.out.println(MinClass.Min(finalSlides.get(0),finalSlides.get(1)));
+        System.out.println(MinClass.Min(finalSlides.get(2),finalSlides.get(1)));
     }
 }

@@ -4,9 +4,9 @@ public class Photo {
 
     public HashSet<String> tags;
     public String type;
-    public int id;
+    public String id;
 
-    public Photo(String type, HashSet<String> t, int id){
+    public Photo(String type, HashSet<String> t, String id){
         this();
         this.type=type;
         this.tags=t;

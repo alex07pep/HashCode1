@@ -30,7 +30,7 @@ public class Reader {
             for(int j=0;j<nrTags;j++){
                 tags.add(parts[j+2]);
             }
-            list.add(new Photo(parts[0],tags,i));
+            list.add(new Photo(parts[0],tags,i+""));
 
         }
         sc.close();
