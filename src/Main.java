@@ -14,5 +14,10 @@ public class Main {
        ArrayList<Photo> list1 = Reader.read("resources/a_example.txt");
 
        System.out.println(list1);
+
+       System.out.println(MinClass.Min(list1.get(0),list1.get(1)));
+
+        System.out.println(MinClass.Min(list1.get(1),list1.get(2)));
+        System.out.println(MinClass.Min(list1.get(0),list1.get(3)));
     }
 }
